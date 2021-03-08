@@ -1,4 +1,1 @@
-
-web: gunicorn "app.create_app()" --log-file - --log-level debug
-python manage.py collectstatic --noinput
-manage.py migrate
+web: gunicorn -w 4 "app:create_app()" -t 120
